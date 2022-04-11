@@ -1,0 +1,68 @@
+1) Il livello rappresenta il punto in cui sono arrivato nell'esplorazione delle soluzioni possibili 
+all'interno delle possibili soluzioni generate dalla ricorsione.
+
+2)Data una parola con n lettere, una soluzione parziale è una parola
+formata da m lettere; dove n>m e m = livello.
+Arrivati alla fine del processo ricorsivo si avrà che m=n;
+
+3)Come detto al punto 2, una soluzione parziale sara da 
+considerarsi completa quando m = n.
+
+4)Sapere se la soluzione parziale è valida o no è certamente 
+vantaggioso da punto di vista computazionale perche mi permetterebbe di 
+evitare di esplorare una serie di soluzioni parziali magari inutili.
+Si puo' pensare di implementare un algoritmo che vada a 
+controllare che nessuna regola grammaticale vada infranta nella 
+creazione della parola (ad esempio n seguita da b nella lingua 
+italiana).
+Questo potrebbe pero avere dei limiti nel caso in cui ci fossero delle 
+eccezioni o dei neologismi, dal momento che il linguaggio evolve nel
+tempo.
+Dunque si puo' controllare a ogni livello che ci sia una parola nel 
+dizionario che inizia con le lettere della soluzione parziale, per poi
+scartala se cio non fosse verificato.
+Si potrebbe ad esempio fare con substring o con startsWith.
+
+5)una soluzione completa è valida quando è presente nel dizionario.
+
+6)Richiamado la funzione al suo interno effettuando ricorsione
+
+7) Una String.
+
+8) sono: un int livello e un possibile boolean che mi dice se devo
+continuare a esplorare le soluzioni oppure no.
+
+9) // struttura di un algoritmo ricorsivo 
+
+void recursive(... , level){
+
+// E -- sequenza di istruzioni che vengono eseguite sempre 
+//solo in casi rari
+doAlways();
+
+//A
+if ( condizione di terminazione ){
+  doSomething;
+  return;
+}
+
+for(){
+
+//B
+generaNuovaSoluzioneParziale;
+
+if (filtro) { //C
+  recursive (..., level + 1);
+}
+
+//D
+backtracking;
+}
+}
+
+
+
+
+
+
+
